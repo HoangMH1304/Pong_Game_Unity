@@ -1,11 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Ball : MonoBehaviour
 {
     public float moveSpeed = 30;
+    public TextMeshProUGUI Score1;
+    public TextMeshProUGUI Score2;
     private Rigidbody2D rigidBody;
+    private int score1 = 0;
+    private int score2 = 0;
     
     void Start()
     {
@@ -19,13 +24,15 @@ public class Ball : MonoBehaviour
             if(col.gameObject.name == "West Wall" || col.gameObject.name == "East Wall")
             {
                 transform.position = new Vector2(0, 0);
+                if(col.gameObject.name == "West Wall") score2++;
+                else score1++;
+                UpdateScore();
             }
         }
         if(col.gameObject.tag == "Player")
         {
             handlePaddleHit(col);
         }
-        
     }
 
     void handlePaddleHit(Collision2D col)
@@ -46,5 +53,11 @@ public class Ball : MonoBehaviour
     float BallHitPaddleWhere(Vector2 ball, Vector2 paddle, float paddleHeight)
     {
         return (ball.y - paddle.y) / paddleHeight;
+    }
+
+    void UpdateScore()
+    {
+        Score1.text = score1.ToString();
+        Score2.text = score2.ToString(); 
     }
 }
