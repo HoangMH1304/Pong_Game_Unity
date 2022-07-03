@@ -11,7 +11,7 @@ public class RightPaddle : MonoBehaviour
 
     void Update()
     {
-        if(ball.position.Equals(new Vector3(0, 0, 0)))
+        if(ball.position.Equals(Vector3.zero))
         {
             transform.position = new Vector3(transform.position.x, 0, transform.position.z);
         }
