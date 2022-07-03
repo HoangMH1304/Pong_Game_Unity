@@ -9,16 +9,20 @@ public class RightPaddle : MonoBehaviour
 
     float xDirection;
 
-    void FixedUpdate()
+    void Update()
     {
-        xDirection = ball.position.y;
-        if(xDirection < transform.position.y) xDirection = -1;
-        else if(xDirection > transform.position.y) xDirection = 1;
-        else xDirection = 0;
-        float movePosition = moveSpeed * Time.deltaTime * xDirection;
-        if(movePosition > ball.transform.position.y) movePosition = ball.position.y;
-        // movePosition = ball.position.y - transform.position.y;
-        transform.position = new Vector3(transform.position.x, movePosition, transform.position.z);
-        //not completed
+        if(ball.position.Equals(new Vector3(0, 0, 0)))
+        {
+            transform.position = new Vector3(transform.position.x, 0, transform.position.z);
+        }
+        if(transform.position.y < ball.position.y && transform.position.y < 21 && ball.position.x > 0)
+        {
+            transform.position += new Vector3(0, moveSpeed * Time.deltaTime, 0);
+        }
+
+        if(transform.position.y > ball.position.y && transform.position.y > -21 && ball.position.x > 0)
+        {
+            transform.position += new Vector3(0, -moveSpeed * Time.deltaTime, 0);
+        }
     }
 }

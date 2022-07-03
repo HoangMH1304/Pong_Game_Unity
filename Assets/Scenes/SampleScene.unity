@@ -1434,7 +1434,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c163bf1c73da284b8f3c7e302bac52b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 10
+  moveSpeed: 20
   ball: {fileID: 626392407}
 --- !u!1 &2121099067
 GameObject:
@@ -1483,7 +1483,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ceed79b43a6ff2a44aba6c47806ae436, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 30
+  moveSpeed: 20
 --- !u!212 &2121099070
 SpriteRenderer:
   m_ObjectHideFlags: 0

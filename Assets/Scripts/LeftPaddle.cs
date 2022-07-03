@@ -5,11 +5,15 @@ using UnityEngine;
 public class LeftPaddle : MonoBehaviour
 {
     public float moveSpeed;
-    float xDirection;
-    void FixedUpdate()
+    void Update()
     {
-        xDirection = Input.GetAxisRaw("Vertical");
-        float moveStep = moveSpeed * xDirection * Time.deltaTime;
-        transform.position += new Vector3(0, moveStep, 0); 
+        if(Input.GetKey(KeyCode.UpArrow) && transform.position.y < 21)
+        {
+            transform.position += new Vector3(0, moveSpeed * Time.deltaTime, 0);
+        }
+        if(Input.GetKey(KeyCode.DownArrow) && transform.position.y > -21)
+        {
+            transform.position += new Vector3(0, -moveSpeed * Time.deltaTime, 0);
+        } 
     }
 }
