@@ -4,21 +4,20 @@ using UnityEngine;
 
 public class Sound : MonoBehaviour
 {
-    public static Sound Instance = null;
-    public AudioClip techno_bg_music;
-    public AudioClip GoalBloop;
-    public AudioClip HitPaddleBloop;
-    public AudioClip LossBuzz;
-    public AudioClip WallBloop;
-    public AudioClip WinSound;
-    private AudioSource SoundEffect;
+    public static Sound instance = null;
+    public AudioClip goalBloop;
+    public AudioClip hitPaddleBloop;
+    public AudioClip lossBuzz;
+    public AudioClip wallBloop;
+    public AudioClip winSound;
+    private AudioSource soundEffect;
 
     void Start() {
-        if(Instance == null)
+        if(instance == null)
         {
-            Instance = this;
+            instance = this;
         }
-        else
+        else if(instance != this)
         {
             Destroy(gameObject);
         }
@@ -27,13 +26,13 @@ public class Sound : MonoBehaviour
         {
             if(source.clip == null)
             {
-                SoundEffect = source;
+                soundEffect = source;
             }
         }
     }
 
     public void playOneShot(AudioClip clip)
     {
-        SoundEffect.PlayOneShot(clip);
+        soundEffect.PlayOneShot(clip);
     }
 }

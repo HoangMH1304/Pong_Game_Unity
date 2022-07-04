@@ -7,9 +7,12 @@ public class RightPaddle : MonoBehaviour
     public float moveSpeed;
     public Rigidbody2D ball;
 
-    float xDirection;
-
     void Update()
+    {
+        movingRightPaddle();
+    }
+
+    void movingRightPaddle()
     {
         if(ball.position.Equals(Vector3.zero))
         {
@@ -19,7 +22,6 @@ public class RightPaddle : MonoBehaviour
         {
             transform.position += new Vector3(0, moveSpeed * Time.deltaTime, 0);
         }
-
         if(transform.position.y > ball.position.y && transform.position.y > -21 && ball.position.x > 0)
         {
             transform.position += new Vector3(0, -moveSpeed * Time.deltaTime, 0);

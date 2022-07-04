@@ -946,9 +946,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 25
-  Score1: {fileID: 420615918}
-  Score2: {fileID: 1344821991}
-  Result: {fileID: 547439579}
+  displayScore1: {fileID: 420615918}
+  displayScore2: {fileID: 1344821991}
+  result: {fileID: 547439579}
 --- !u!1 &706068514
 GameObject:
   m_ObjectHideFlags: 0
@@ -961,6 +961,7 @@ GameObject:
   - component: {fileID: 706068517}
   - component: {fileID: 706068516}
   - component: {fileID: 706068515}
+  - component: {fileID: 706068519}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1051,6 +1052,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &706068519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 706068514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceed79b43a6ff2a44aba6c47806ae436, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 0
 --- !u!1 &1081406952
 GameObject:
   m_ObjectHideFlags: 0
@@ -1456,12 +1470,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f6d357014ec4494093f7023a4e29f5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  techno_bg_music: {fileID: 8300000, guid: f7bfbd400f3e1a941a463488b2e505da, type: 3}
-  GoalBloop: {fileID: 8300000, guid: 672d70c4723f3a449a6f54a332077342, type: 3}
-  HitPaddleBloop: {fileID: 8300000, guid: 7ebcb3f9cfa80e24c8532bb43523d8f1, type: 3}
-  LossBuzz: {fileID: 8300000, guid: 63aa9c6ad4334ae4cb226189d1800c17, type: 3}
-  WallBloop: {fileID: 8300000, guid: 09b43b82348ce4e45a445d66ee9935a8, type: 3}
-  WinSound: {fileID: 8300000, guid: e62107413daf4ce43b859c1c6d7cd973, type: 3}
+  goalBloop: {fileID: 8300000, guid: 672d70c4723f3a449a6f54a332077342, type: 3}
+  hitPaddleBloop: {fileID: 8300000, guid: 7ebcb3f9cfa80e24c8532bb43523d8f1, type: 3}
+  lossBuzz: {fileID: 8300000, guid: 63aa9c6ad4334ae4cb226189d1800c17, type: 3}
+  wallBloop: {fileID: 8300000, guid: 09b43b82348ce4e45a445d66ee9935a8, type: 3}
+  winSound: {fileID: 8300000, guid: e62107413daf4ce43b859c1c6d7cd973, type: 3}
 --- !u!82 &1813692948
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1729,7 +1742,6 @@ GameObject:
   - component: {fileID: 2121099068}
   - component: {fileID: 2121099070}
   - component: {fileID: 2121099071}
-  - component: {fileID: 2121099072}
   - component: {fileID: 2121099073}
   - component: {fileID: 2121099069}
   m_Layer: 0
@@ -1838,32 +1850,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!61 &2121099072
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2121099067}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2, y: 4}
-    newSize: {x: 2, y: 4}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 2, y: 4}
-  m_EdgeRadius: 0
 --- !u!61 &2121099073
 BoxCollider2D:
   m_ObjectHideFlags: 0
