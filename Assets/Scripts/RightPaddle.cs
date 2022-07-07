@@ -9,10 +9,10 @@ public class RightPaddle : MonoBehaviour
 
     void Update()
     {
-        movingRightPaddle();
+        MovingRightPaddle();
     }
 
-    void movingRightPaddle()
+    void MovingRightPaddle()
     {
         if(ball.position.Equals(Vector3.zero))
         {

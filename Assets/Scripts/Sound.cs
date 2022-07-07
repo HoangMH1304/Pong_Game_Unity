@@ -31,7 +31,7 @@ public class Sound : MonoBehaviour
         }
     }
 
-    public void playOneShot(AudioClip clip)
+    public void PlayOneShot(AudioClip clip)
     {
         soundEffect.PlayOneShot(clip);
     }

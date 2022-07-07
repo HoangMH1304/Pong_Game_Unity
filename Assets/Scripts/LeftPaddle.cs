@@ -7,10 +7,10 @@ public class LeftPaddle : MonoBehaviour
     public float moveSpeed;
     void Update()
     {
-        movingLeftPaddle();
+        MovingLeftPaddle();
     }
 
-    void movingLeftPaddle()
+    void MovingLeftPaddle()
     {
         if(Input.GetKey(KeyCode.UpArrow) && transform.position.y < 21)
         {
