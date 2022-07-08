@@ -11,15 +11,10 @@ public class UpdateResult : MonoBehaviour
     private int score1 = 0;
     private int score2 = 0;
     private bool gameOver = false;
-    private Rigidbody2D rigidBody;
     private AudioSource audioSource;
 
-    void Start()
-    {
-        rigidBody = GetComponent<Rigidbody2D>();
-    }
 
-    public void UpdateScore(Collision2D other)
+    public void AdjustScore(Collision2D other)
     {
         if(other.gameObject.name == "West Wall") score2++;
         if(other.gameObject.name == "East Wall") score1++;

@@ -29,7 +29,8 @@ public class Ball : MonoBehaviour
     {
         if(other.gameObject.name == "West Wall" || other.gameObject.name == "East Wall")
             {
-                updateResult.UpdateScore(other);
+                updateResult.AdjustScore(other);
+                
                 transform.position = Vector2.zero;
                 if(updateResult.GetResult()) rigidBody.velocity = Vector2.zero;
             }
