@@ -6,15 +6,18 @@ using TMPro;
 public class Ball : MonoBehaviour
 {
     public float moveSpeed = 30;
-    public GameObject otherGameobject;
     private Rigidbody2D rigidBody;
     private UpdateResult updateResult;
-    private AudioSource audioSource;    
+    private AudioSource audioSource; 
+    const string WEST_WALL = "West Wall";
+    const string EAST_WALL = "East Wall";
+    const string NORTH_WALL = "North Wall";
+    const string SOUTH_WALL = "South Wall";
+       
     
     void Start()
     {
-        updateResult = otherGameobject.GetComponent<UpdateResult>();
-
+        updateResult = GameObject.Find("GameManager").GetComponent<UpdateResult>();
         rigidBody = GetComponent<Rigidbody2D>();
         rigidBody.velocity = Vector2.left * moveSpeed;
     }
@@ -27,10 +30,9 @@ public class Ball : MonoBehaviour
 
     void HandleWallTag(Collision2D other)
     {
-        if(other.gameObject.name == "West Wall" || other.gameObject.name == "East Wall")
+        if(other.gameObject.name.Equals(WEST_WALL) || other.gameObject.name.Equals(EAST_WALL))
             {
-                updateResult.AdjustScore(other);
-                
+                updateResult.UpdateScore(other);
                 transform.position = Vector2.zero;
                 if(updateResult.GetResult()) rigidBody.velocity = Vector2.zero;
             }

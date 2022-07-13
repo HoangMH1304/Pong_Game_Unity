@@ -14,7 +14,7 @@ public class UpdateResult : MonoBehaviour
     private AudioSource audioSource;
 
 
-    public void AdjustScore(Collision2D other)
+    public void UpdateScore(Collision2D other)
     {
         if(other.gameObject.name == "West Wall") score2++;
         if(other.gameObject.name == "East Wall") score1++;
