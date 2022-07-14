@@ -68,8 +68,3 @@ public class Ball : MonoBehaviour
         return (ball.y - paddle.y) / paddleHeight;
     }
 }
-//camelcase
-//static
-//class vs object
-//instance
-//dry code  
