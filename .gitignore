@@ -1,0 +1,8 @@
+/.vscode/
+/Library/
+/Logs/
+/obj/
+/UserSettings/
+/Assembly-CSharp.csproj
+/Pong.sln
+/Temp/
