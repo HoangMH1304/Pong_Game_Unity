@@ -21,14 +21,15 @@ public class Sound : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        AudioSource[] sources = GetComponents<AudioSource>();
-        foreach(AudioSource source in sources)
-        {
+        var source = GetComponent<AudioSource>();
             if(source.clip == null)
             {
                 soundEffect = source;
             }
-        }
+
+            // var a = new Sound();
+            
+            // Sound.instance.wallBloop
     }
 
     public void PlayOneShot(AudioClip clip)
