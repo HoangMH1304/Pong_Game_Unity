@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class LeftPaddle : MonoBehaviour
 {
-    public float moveSpeed = 30f;
-    private Rigidbody2D rigidBody;
+    [SerializeField]
+    private float moveSpeed = 30f;
     private const int TOP_CORNER = 21;
     private const int BOTTOM_CORNER = -21;
 

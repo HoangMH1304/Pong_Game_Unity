@@ -5,7 +5,8 @@ using TMPro;
 
 public class Ball : MonoBehaviour
 {
-    public float moveSpeed = 30;
+    [SerializeField]
+    private float moveSpeed = 30;
     private Rigidbody2D rigidBody;
     private UpdateResult updateResult;
     private AudioSource audioSource; 
@@ -32,7 +33,7 @@ public class Ball : MonoBehaviour
     {
         if(other.gameObject.name.Equals(WEST_WALL) || other.gameObject.name.Equals(EAST_WALL))
             {
-                updateResult.UpdateScore(other);
+                updateResult.AdjustScore(other);
                 transform.position = Vector2.zero;
                 if(updateResult.GetResult()) rigidBody.velocity = Vector2.zero;
             }
@@ -66,5 +67,14 @@ public class Ball : MonoBehaviour
     float GetCollisionPos(Vector2 ball, Vector2 paddle, float paddleHeight)
     {
         return (ball.y - paddle.y) / paddleHeight;
+    }
+
+    private void Update() {
+        if(!updateResult.GetResult()) return;
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            rigidBody.velocity = Vector2.left * moveSpeed;
+            updateResult.Reset();
+        }
     }
 }
